@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://2fr67wf0pj4y"]
+
+[ext_resource type="Script" uid="uid://b327dxfbyrge5" path="res://closetedjustin.gd" id="1_0x4i6"]
+[ext_resource type="Texture2D" uid="uid://bw1kv18bn6j5r" path="res://justincage.png" id="2_hdum5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psxsr"]
+size = Vector2(224.5, 234.5)
+
+[node name="closetedjustin" type="Area2D" unique_id=1202944295 groups=["enemies"]]
+script = ExtResource("1_0x4i6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201764064]
+position = Vector2(0, -0.99999905)
+scale = Vector2(6.083333, 6.083333)
+texture = ExtResource("2_hdum5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665339168]
+position = Vector2(-7.25, -5.25)
+shape = SubResource("RectangleShape2D_psxsr")

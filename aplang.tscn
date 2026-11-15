@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dl1fjossjceuq"]
+
+[ext_resource type="Script" uid="uid://i0m0whfa7sr3" path="res://aplang.gd" id="1_qsuh3"]
+[ext_resource type="Texture2D" uid="uid://br5ombcf8p0ue" path="res://aplang.png" id="2_jpl1r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psxsr"]
+size = Vector2(38, 34)
+
+[node name="aplang" type="Area2D" unique_id=891853940]
+script = ExtResource("1_qsuh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=517979218]
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_psxsr")
+
+[node name="Aplang" type="Sprite2D" parent="." unique_id=76263919]
+z_index = 10
+position = Vector2(2.000002, 1.9073486e-06)
+scale = Vector2(0.09361706, 0.09361705)
+texture = ExtResource("2_jpl1r")

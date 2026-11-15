@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dmn8xyb6o2pmf"]
+
+[ext_resource type="Script" uid="uid://badwt2xtaty7" path="res://claude.gd" id="1_k32o1"]
+[ext_resource type="Texture2D" uid="uid://crftshbvmsln8" path="res://claude.png" id="2_co14d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fady"]
+atlas = ExtResource("2_co14d")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdlu6"]
+atlas = ExtResource("2_co14d")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_527lq"]
+atlas = ExtResource("2_co14d")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3hfd"]
+atlas = ExtResource("2_co14d")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyqoc"]
+atlas = ExtResource("2_co14d")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et8oa"]
+atlas = ExtResource("2_co14d")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psxsr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fady")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdlu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_527lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3hfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyqoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et8oa")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psxsr"]
+size = Vector2(133, 240)
+
+[node name="claude" type="Area2D" unique_id=519471208]
+script = ExtResource("1_k32o1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=512842381]
+position = Vector2(2, 1)
+scale = Vector2(11.885418, 11.885418)
+sprite_frames = SubResource("SpriteFrames_psxsr")
+animation = &"idle"
+frame = 2
+frame_progress = 0.7615804
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=219242232]
+position = Vector2(-5.5, 25)
+shape = SubResource("RectangleShape2D_psxsr")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=510651359]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=835287254]
+position = Vector2(-133, -1)
+rect = Rect2(-283, -94, 345, 243)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

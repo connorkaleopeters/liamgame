@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c1nhwlikjdgae"]
+
+[ext_resource type="Script" uid="uid://dstgschjd1nob" path="res://trampoline.gd" id="1_cilbb"]
+[ext_resource type="Texture2D" uid="uid://b60uxwj6reto8" path="res://trampoline-Sheet.png" id="1_d0j4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cilbb"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(6, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iocah"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(106, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvbrq"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(206, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hch62"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(306, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4tbr"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(406, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crrlg"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(506, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wld5h"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(606, 0, 25, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p1gw"]
+atlas = ExtResource("1_d0j4r")
+region = Rect2(6, 0, 25, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psxsr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cilbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iocah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvbrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hch62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4tbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crrlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wld5h")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p1gw")
+}],
+"loop": 0,
+"name": &"stay",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psxsr"]
+size = Vector2(139.5, 10.5)
+
+[node name="Trampoline" type="Area2D" unique_id=776246515]
+script = ExtResource("1_cilbb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=241843761]
+position = Vector2(-1, 60)
+scale = Vector2(13.97, 10.406923)
+sprite_frames = SubResource("SpriteFrames_psxsr")
+animation = &"stay"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014917400]
+position = Vector2(-7.75, -7.25)
+shape = SubResource("RectangleShape2D_psxsr")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b18a5iv3joyg3"]
+
+[ext_resource type="Script" uid="uid://dfrmnjjj483nk" path="res://music_note.gd" id="1_aceds"]
+[ext_resource type="Texture2D" uid="uid://bmsr5flbjm5u5" path="res://low8thnotes.png" id="2_uivt4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psxsr"]
+size = Vector2(34.5, 34.5)
+
+[node name="MusicNote" type="Area2D" unique_id=1160182129]
+script = ExtResource("1_aceds")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=356302841]
+position = Vector2(9, 12)
+scale = Vector2(3.5833333, 3.5833333)
+texture = ExtResource("2_uivt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361680409]
+shape = SubResource("RectangleShape2D_psxsr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1681834001]
+rect = Rect2(-17, -17, 34, 34)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

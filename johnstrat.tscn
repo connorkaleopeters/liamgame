@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ccuh1t1mc53yq"]
+
+[ext_resource type="Script" uid="uid://cw50urewxe1sw" path="res://johnstrat.gd" id="1_p30rx"]
+[ext_resource type="Texture2D" uid="uid://b3fnl701mocqm" path="res://johnstrat.png" id="2_lu622"]
+[ext_resource type="Texture2D" uid="uid://ckoi8aclu7npi" path="res://johnspeech.png" id="3_unh2j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_psxsr"]
+radius = 136.30847
+
+[node name="johnstrat" type="Area2D" unique_id=1803969410 groups=["enemies"]]
+script = ExtResource("1_p30rx")
+
+[node name="johnstrat" type="Sprite2D" parent="." unique_id=976186604]
+position = Vector2(-3, 17.000008)
+scale = Vector2(0.5833333, 0.5833334)
+texture = ExtResource("2_lu622")
+
+[node name="johnspeech" type="Sprite2D" parent="." unique_id=937892161]
+position = Vector2(-232.4375, -143.31247)
+scale = Vector2(5.356771, 5.356771)
+texture = ExtResource("3_unh2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=545388406 groups=["enemies"]]
+position = Vector2(-4, 3)
+shape = SubResource("CircleShape2D_psxsr")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=696600374]
+position = Vector2(-64, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=434887445]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1618229188]
