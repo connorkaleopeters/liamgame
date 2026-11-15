@@ -3,7 +3,7 @@ We made this game for hack club SF, it was kind of created on a whim. A creature
 
 Play using the arrow keys, and space to shoot
 
-Details
+Details:
 We struggled a bit with the shooting projectiles and the shooting mechanics the boss had
 
 
